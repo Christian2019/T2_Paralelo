@@ -13,10 +13,16 @@ struct complex{
 };
 
 int main(int argc, char *argv[]){
-  int i, j, iter, numoutside = 0;
+  int i, j, count, iter, numoutside = 0;
   double area, error, ztemp;
   double start, finish;
   struct complex z, c;
+  
+  int rank, size, root;
+  int *sendbuf, *recvbuf;
+  int minsize = 2;
+  MPI_Comm comm;
+  
 
   /*
    *   
@@ -27,6 +33,9 @@ int main(int argc, char *argv[]){
    */
 
   MPI_Init(&argc,&argv);
+  comm = MPI_COMM_WORLD;
+    MPI_Comm_rank( comm, &rank );
+    MPI_Comm_size( comm, &size );
   start = MPI_Wtime();  
   
   for (i=0; i<NPOINTS; i++) {
@@ -34,18 +43,27 @@ int main(int argc, char *argv[]){
       c.real = -2.0+2.5*(double)(i)/(double)(NPOINTS)+1.0e-7;
       c.imag = 1.125*(double)(j)/(double)(NPOINTS)+1.0e-7;
       z=c;
+      
+        sendbuf = (int *)malloc( i * sizeof(int) );
+        recvbuf = (int *)malloc( i * sizeof(int) );
+ 
+ 	MPI_Reduce(sendbuf,recvbuf , i, MPI_INT, MPI_SUM, root, comm);
+ 
+      
       for (iter=0; iter<MAXITER; iter++){
         ztemp=(z.real*z.real)-(z.imag*z.imag)+c.real;
         z.imag=z.real*z.imag*2+c.imag; 
         z.real=ztemp; 
         if ((z.real*z.real+z.imag*z.imag)>4.0e0) {
           numoutside++; 
+	  count=numoutside;
           break;
         }
       }
     }
+    
+   
   }
-
 
   finish = MPI_Wtime();  
 
