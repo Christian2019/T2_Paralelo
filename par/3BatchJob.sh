@@ -1,7 +1,7 @@
 #!/bin/bash
 #PBS -m abe
 #PBS -V
-#PBS -l nodes=2:ppn=1:cluster-Grad,walltime=00:30:00
+#PBS -l nodes=3:ppn=1:cluster-Grad,walltime=01:00:00
 #PBS -M daniel.gery@acad.pucrs.br
 #PBS -r n
 #PBS -j oe
@@ -19,14 +19,14 @@ echo
 echo JOB_ID:
 echo 'echo $PBS_JOBID'
 echo #################
-echo "-----------2------------"
-time mpirun -np 2 ./paralelo1
-echo "-----------4------------"
-time mpirun -np 4 ./paralelo1
-echo "-----------8------------"
-time mpirun -np 8 ./paralelo1
-echo "-----------16------------"
-time mpirun -np 16 ./paralelo1
-echo "-----------32------------"
-time mpirun -np 32 ./paralelo1
+echo "-----------3------------"
+time mpirun -np 3 ./paralelo1
+echo "-----------6------------"
+time mpirun -np 6 ./paralelo1
+echo "-----------12------------"
+time mpirun -np 12 ./paralelo1
+echo "-----------24------------"
+time mpirun -np 24 ./paralelo1
+echo "-----------48------------"
+time mpirun -np 48 ./paralelo1
 echo Final Time is 'date'言
