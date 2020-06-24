@@ -20,5 +20,5 @@ echo JOB_ID:
 echo 'echo $PBS_JOBID'
 echo #################
 echo "-----------NPOINTS-500------------"
-mpirun -np 1 ./atividade
+mpirun -np 1 ./sequencial
 echo Final Time is 'date'言
