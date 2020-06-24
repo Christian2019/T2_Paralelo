@@ -1,0 +1,32 @@
+job1 - execução sequencial - 1 nodo
+* 1 processo
+
+job2 - execução mpi - 2 nodos (de 2 a 16 processos em cada nodo, cada processo com 1 thread)
+* 2 processos (mpirun --bynode -np 2 ...) -> 2 processos, cada um em um nodo e cada processo com 1 thread
+* 4 processos (mpirun --bynode -np 4 ...) -> 4 processos, 2 processos por nodo e cada processo com 1 thread
+* 8 processos (mpirun --bynode -np 8 ...) -> 8 processos, 4 processos por nodo e cada processo com 1 thread
+* 16 processos (mpirun --bynode -np 16 ...) -> 16 processos, 8 processos por nodo e cada processo com 1 thread
+* 32 processos (mpirun --bynode -np 32 ...) -> 32 processos, 16 processos por nodo e cada processo com 1 thread
+
+job3 - execução mpi - 3 nodos (de 2 a 16 processos em cada nodo, cada processo com 1 thread)
+* 3 processos (mpirun --bynode -np 3 ...) -> 3 processos, cada um em um nodo e cada processo com 1 thread
+* 6 processos (mpirun --bynode -np 6 ...) -> 6 processos, 2 processos por nodo e cada processo com 1 thread
+* 12 processos (mpirun --bynode -np 12 ...) -> 12 processos, 4 processos por nodo e cada processo com 1 thread
+* 24 processos (mpirun --bynode -np 24 ...) -> 24 processos, 8 processos por nodo e cada processo com 1 thread
+* 48 processos (mpirun --bynode -np 48 ...) -> 48 processos, 16 processos por nodo e cada processo com 1 thread
+
+job4 - execução mpi - 4 nodos (de 2 a 16 processos em cada nodo, cada processo com 1 thread)
+* 4 processos (mpirun --bynode -np 4 ...) -> 4 processos, cada um em um nodo e cada processo com 1 thread
+* 8 processos (mpirun --bynode -np 8 ...) -> 8 processos, 2 processos por nodo e cada processo com 1 thread
+* 16 processos (mpirun --bynode -np 16 ...) -> 16 processos, 4 processos por nodo e cada processo com 1 thread
+* 32 processos (mpirun --bynode -np 32 ...) -> 32 processos, 8 processos por nodo e cada processo com 1 thread
+* 64 processos (mpirun --bynode -np 64 ...) -> 64 processos, 16 processos por nodo e cada processo com 1 thread
+
+job2b - execução mpi+openmp - 2 nodos
+* 32 processos (mpirun -np 32 ...) -> 2 processos, cada um em nodo e cada um com 16 threads
+
+job3b - execução mpi+openmp - 3 nodos
+* 48 processos (mpirun -np 48 ...) -> 3 processos, cada um em nodo e cada um com 16 threads
+
+job4b - execução mpi+openmp - 4 nodos
+* 64 processos (mpirun -np 64 ...) -> 4 processos, cada um em nodo e cada um com 16 threads

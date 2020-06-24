@@ -38,7 +38,8 @@ int main(int argc, char *argv[])
             {
                 for (j = 0; j < NPOINTS; j++)
                 {
-                    c.real = -2.0 + 2.5 * (double)(i) / (double)(NPOINTS) + 1.0e-7;
+                    c.real = -2.0 + 2.5 * (double)(i) / (double)(NPOINTS) + 1.0e
+-7;
                     c.imag = 1.125 * (double)(j) / (double)(NPOINTS) + 1.0e-7;
                     z = c;
                     for (iter = 0; iter < MAXITER; iter++)
@@ -67,11 +68,11 @@ int main(int argc, char *argv[])
 
         if (id == 0)
         {
-            area = 2.0 * 2.5 * 1.125 * (double)(NPOINTS * NPOINTS - total) / (double)(NPOINTS * NPOINTS);
+            area = 2.0 * 2.5 * 1.125 * (double)(NPOINTS * NPOINTS - total) / (do
+uble)(NPOINTS * NPOINTS);
             error = area / (double)NPOINTS;
 
-             printf("Area of Mandlebrot set = %12.8f +/- %12.8f\n", area, error);
-             printf("%d = %12.8f seconds\n", NPOINTS, finish - start);
+            printf("%d = %12.8f\n",NPOINTS, finish - start);
         }
     }
     MPI_Finalize();
