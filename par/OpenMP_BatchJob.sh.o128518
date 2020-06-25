@@ -1,0 +1,75 @@
+--------------------------------------
+Running PBS prologue script
+
+Checking all prerequisites...
+Done.
+
+Running on host hostname
+
+Initial Time is date
+
+Directory is pwd
+
+This jobs runs of the following nodes:
+cat $PBS_NODEFILE | uniq
+
+JOB_ID:
+echo $PBS_JOBID
+
+-----------32------------
+Area of Mandlebrot set =   1.51121250 +/-   0.00302243
+500 =   0.11519694 seconds
+Area of Mandlebrot set =   1.51020562 +/-   0.00151021
+1000 =   0.30536294 seconds
+Area of Mandlebrot set =   1.50959500 +/-   0.00100640
+1500 =   0.67954016 seconds
+Area of Mandlebrot set =   1.50928453 +/-   0.00075464
+2000 =   1.21462607 seconds
+Area of Mandlebrot set =   1.50905790 +/-   0.00060362
+2500 =   1.88369608 seconds
+Area of Mandlebrot set =   1.50903813 +/-   0.00050301
+3000 =   2.72278309 seconds
+Area of Mandlebrot set =   1.50894735 +/-   0.00043113
+3500 =   3.70178604 seconds
+Area of Mandlebrot set =   1.50881590 +/-   0.00037720
+4000 =   4.84044409 seconds
+Area of Mandlebrot set =   1.50882444 +/-   0.00033529
+4500 =   6.12319899 seconds
+Area of Mandlebrot set =   1.50875573 +/-   0.00030175
+5000 =   7.54397297 seconds
+
+real	0m30.458s
+user	7m44.505s
+sys	0m0.468s
+Final Time is date言
+
+--------------------------------------
+Running PBS epilogue.user script
+
+End of PBS epilogue.user script
+
+--------------------------------------
+Running PBS epilogue script
+
+Disabling access of user pp12725 on the batch nodes
+Doing node grad01
+
+ -- Killing all stale user  processes... done.
+ -- Cleaning-up any shmemory segments... done.
+Doing node grad02
+
+ -- Killing all stale user  processes... done.
+ -- Cleaning-up any shmemory segments... done.
+
+Done.
+
+Resources used:
+
+ -- CPU TIME     = 00:02:24 
+
+ -- MEMORY       = 72168kb 
+
+ -- VIRTUAL MEM  = 2551228kb 
+
+ -- ELAPSED TIME = 00:00:32 
+
