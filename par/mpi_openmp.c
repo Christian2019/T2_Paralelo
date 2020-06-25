@@ -73,7 +73,8 @@ int main(int argc, char *argv[])
         {
             area = 2.0 * 2.5 * 1.125 * (double)(NPOINTS * NPOINTS - total) / (double)(NPOINTS * NPOINTS);
             error = area / (double)NPOINTS;
-            printf("%d = %12.8f\n",NPOINTS, finish - start);
+            printf("Area of Mandlebrot set = %12.8f +/- %12.8f\n", area, error);
+            printf("%d = %12.8f seconds\n", NPOINTS, finish - start);
         }
     }
     MPI_Finalize();
